@@ -1,5 +1,29 @@
 <div class="container">
+  <ul class="nav">
+    <!-- <a href="/about">About</a> -->
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a routerLink="">Home page</a>
+    </li><br>
+    <li routerLinkActive="active">
+      <a routerLink="/about" >About page</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="item/25" >Item page</a> <!-- прикольно работает -->
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['item', '255']" >Item page 2</a> <!-- прикольно работает -->
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="element/10/intel/201" [queryParams]="{'id': '1','product': 'Intel 7 10700k', 'price': '500'}">Product page</a> <!-- прикольно работает -->
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['element', '', '', '']" [queryParams]="{'id': '1','product': 'Ryzen 7 5800', 'price': '390'}">Product page 2</a> <!-- прикольно работает -->
+    </li>
+    
+  </ul>
   <h2>Welcome page</h2>
 
   <router-outlet></router-outlet> <!-- для того чтобы работал -->
+
+  
 </div>
